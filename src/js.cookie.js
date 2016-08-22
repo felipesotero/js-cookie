@@ -1,6 +1,7 @@
 /*!
  * JavaScript Cookie v2.1.2
  * https://github.com/js-cookie/js-cookie
+ * Added encoding of brackets [] -> %5B, %5D
  *
  * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
  * Released under the MIT license
@@ -60,7 +61,7 @@
 
 				if (!converter.write) {
 					value = encodeURIComponent(String(value))
-						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5E|60|7B|7D|7C)/g, decodeURIComponent);
 				} else {
 					value = converter.write(value, key);
 				}

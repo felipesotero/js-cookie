@@ -198,26 +198,6 @@ QUnit.test('RFC 6265 - character allowed in the cookie-value "@"', function (ass
 	});
 });
 
-QUnit.test('RFC 6265 - character allowed in the cookie-value "["', function (assert) {
-	assert.expect(2);
-	using(assert)
-	.setCookie('c', '[')
-	.then(function (decodedValue, plainValue) {
-		assert.strictEqual(decodedValue, '[', 'should handle the opening square bracket character');
-		assert.strictEqual(plainValue, 'c=[', 'opening square bracket is allowed, should not encode');
-	});
-});
-
-QUnit.test('RFC 6265 - character allowed in the cookie-value "]"', function (assert) {
-	assert.expect(2);
-	using(assert)
-	.setCookie('c', ']')
-	.then(function (decodedValue, plainValue) {
-		assert.strictEqual(decodedValue, ']', 'should handle the closing square bracket character');
-		assert.strictEqual(plainValue, 'c=]', 'closing square bracket is allowed, should not encode');
-	});
-});
-
 QUnit.test('RFC 6265 - character allowed in the cookie-value "^"', function (assert) {
 	assert.expect(2);
 	using(assert)
